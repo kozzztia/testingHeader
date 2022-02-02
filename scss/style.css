@@ -1,0 +1,26 @@
+@charset "UTF-8";
+html { font-size: 10px; font-family: "Poppins", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant', serif; }
+
+body { background: #fff; }
+body * { padding: 0; margin: 0; }
+
+.link { color: #000; font-size: 1.5rem; -webkit-text-decoration-color: rgba(0, 0, 0, 0); text-decoration-color: rgba(0, 0, 0, 0); background: inherit; }
+
+.header-conteiner { padding: 2rem 5.5rem; max-width: 128rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; gap: 6rem; margin: 0 auto; border: 1px solid #000; }
+.header-conteiner__logo { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+.header-conteiner__navigation { -webkit-box-flex: 9; -ms-flex: 9; flex: 9; }
+.header-conteiner__navigation .navigation__list { display: -webkit-box; display: -ms-flexbox; display: flex; gap: .5rem; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; position: relative; }
+.header-conteiner__navigation .navigation__list > li:nth-last-child(n+3)::after { content: "⯆"; font-size: 1.5rem; color: #FF8126; padding: .5rem; position: absolute; right: 0; top: 0; }
+.header-conteiner__navigation .navigation__list > li:hover:nth-last-child(n+3)::after { content: "⯅"; color: #FFffff; }
+.header-conteiner__navigation .navigation__list .navigation__item { list-style-type: none; white-space: nowrap; position: relative; padding: .5rem; background: #fff; min-width: 14rem; cursor: pointer; -webkit-transition: .5s; transition: .5s; }
+.header-conteiner__navigation .navigation__list .navigation__item:hover { background: #FF8126; }
+.header-conteiner__navigation .navigation__list .navigation__item .navigation__drop-list { position: absolute; width: inherit; left: 0; -webkit-transition: .5s; transition: .5s; -webkit-transform-origin: top center; transform-origin: top center; -webkit-transform: scale(1, 0); transform: scale(1, 0); min-width: inherit; overflow: hidden; }
+.header-conteiner__navigation .navigation__list .navigation__item:hover > .navigation__drop-list { -webkit-transform: scale(1, 1); transform: scale(1, 1); }
+.header-conteiner__buttons { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; gap: .5rem; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; }
+.header-conteiner__buttons .button { width: 6rem; height: 6rem; border: 1px solid #000; border-radius: 50%; -webkit-transition: .5s; transition: .5s; cursor: pointer; }
+.header-conteiner__buttons .button__icon { width: 100%; height: 100%; -o-object-position: center center; object-position: center center; -o-object-fit: scale-down; object-fit: scale-down; }
+.header-conteiner__buttons .button:hover { background: #FF8126; }
+
+@media screen and (max-width: 1280px) { .header-conteiner { padding: 0 .1rem; width: 100%; gap: .1rem; } }

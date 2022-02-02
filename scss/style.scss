@@ -1,0 +1,127 @@
+// font-family: 'Cormorant', serif;
+// font-family: 'Poppins', sans-serif;
+$color-background: #FF8126;
+$color-textInDarkConteiner: #FFffff;
+html{
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Cormorant', serif;
+}
+body{
+    background: #fff;
+    *{
+        padding: 0;margin: 0;
+    }
+}
+// --------------------
+.link {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    background: inherit;
+}
+
+
+// --------------------
+
+.header-conteiner {
+    padding: 2rem 5.5rem;
+    max-width: 128rem;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin: 0 auto;
+    border: 1px solid #000;
+    &__logo {
+        flex:1
+    }
+    &__navigation {
+        flex: 9;
+        .navigation__list {
+            display: flex;
+            gap: .5rem;
+            justify-content: space-between;
+            position: relative;
+
+            &>li:nth-last-child(n+3)::after{
+                content: "⯆";
+                font-size: 1.5rem;
+                color: $color-background;
+                padding:.5rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            &>li:hover:nth-last-child(n+3)::after{
+                content: "⯅";
+                color: $color-textInDarkConteiner;
+            }
+            .navigation__item{
+                list-style-type: none;
+                white-space: nowrap;
+                position: relative;
+                padding: .5rem;
+                background: #fff;
+                min-width: 14rem;
+                cursor: pointer;
+                transition: .5s;
+                &:hover{
+                    background: $color-background;
+                   
+                }
+ 
+                .navigation__drop-list{
+                    position: absolute;
+                    width: inherit;
+                    left: 0;
+                    transition: .5s;
+                    transform-origin: top center;
+                    transform: scale(1,0);
+                    min-width: inherit;
+                    overflow: hidden;                
+                }
+                &:hover>.navigation__drop-list{
+                    transform: scale(1,1)
+                }
+            }
+
+        }
+    }
+    &__buttons {
+        flex: 1;
+        display: inline-flex;
+        gap: .5rem;
+        align-items: center;
+        display: flex;
+        .button {
+            width: 6rem;
+            height: 6rem;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: .5s;
+            cursor: pointer;
+            &__icon{
+                width:100%;
+                height: 100%;
+                object-position: center center;
+                object-fit: scale-down;
+            }
+            &:hover{
+                background: $color-background;
+            }
+
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .header-conteiner{
+        padding:0 .1rem;
+        width:100%;
+        gap: .1rem;
+    }
+}
